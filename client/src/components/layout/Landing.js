@@ -9,9 +9,9 @@ class Landing extends Component {
                         <h4>
                             <b>Open Treasure Island Queue</b>
                         </h4>
-                        <p className="flow-text grey-text text-darken-1">
+                        {/* <p className="flow-text grey-text text-darken-1">
                             by Haikal Khairul
-                        </p>
+                        </p> */}
                         <br />
                         <div className="col s6">
                             <Link
