@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 
+import QueueButton from '../queue/QueueButton';
+
 class Dashboard extends Component {
     onLogoutClick = e => {
         e.preventDefault();
@@ -21,6 +23,7 @@ class Dashboard extends Component {
                                 <span style={{ fontFamily: "monospace" }}>Open Treasure Island Queue</span>
                             </p>
                         </h4>
+                        <QueueButton />
                         <button
                             style={{
                                 width: "150px",
@@ -32,7 +35,7 @@ class Dashboard extends Component {
                             className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                         >
                             Logout
-            </button>
+                        </button>
                     </div>
                 </div>
             </div>
