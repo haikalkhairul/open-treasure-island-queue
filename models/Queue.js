@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const QueueSchema = new Schema({
-    email: {
+    id: {
         type: String,
         required: true
     },

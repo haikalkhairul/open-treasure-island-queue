@@ -44,6 +44,30 @@ export const loginUser = userData => dispatch => {
         );
 };
 
+// Queue in user
+export const queueUser = () => dispatch => {
+    const token = localStorage.getItem("jwtToken");
+    const decoded = jwt_decode(token);
+    const data = {
+        id: decoded.id
+    };
+    console.log(token);
+    console.log(decoded);
+    console.log(decoded.id);
+    axios
+        .post("/api/queue/queue", data)
+        .then(res => {
+            console.log(token);
+            console.log(decoded);
+            console.log(decoded.id);
+        })
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            }))
+};
+
 // Set logged in user
 export const setCurrentUser = decoded => {
     return {

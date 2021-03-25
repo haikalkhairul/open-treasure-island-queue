@@ -8,12 +8,12 @@ const Queue = require("../../models/Queue");
 // @desc Queue user
 // @access Public
 router.post("/queue", (req, res) => {
-    Queue.findOne({ email: req.body.email }).then(queue => {
+    Queue.findOne({ id: req.body.id }).then(queue => {
         if (queue) {
-            return res.status(400).json({ email: "Email already in queue" });
+            return res.status(400).json({ id: "User already in queue" });
         } else {
             const newUser = new Queue({
-                email: req.body.email
+                id: req.body.id
             });
             newUser
                 .save()
