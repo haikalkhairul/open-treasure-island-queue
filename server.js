@@ -13,8 +13,10 @@ app.use(
     })
 );
 app.use(bodyParser.json());
+
 // DB Config
 const db = require("./config/keys").mongoURI;
+
 // Connect to MongoDB
 mongoose
     .connect(
@@ -26,8 +28,10 @@ mongoose
 
 // Passport middleware
 app.use(passport.initialize());
+
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 app.use("/api/users", users);
 
